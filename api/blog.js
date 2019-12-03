@@ -25,6 +25,7 @@ router.post('/login', async (req, res, next) => {
 });
 //获取文章列表
 router.get('/getList', async (req, res, next) => {
+    console.log(123)
     try {
         console.log('---------查询参数为-----------');
         let type = req.query.type;
@@ -37,7 +38,6 @@ router.get('/getList', async (req, res, next) => {
         console.log('-----------------------------');
         console.log(data);
         res.json({code: 200, data: data})
-        // res.send('ok')
     } catch (err) {
         throw new Error(err)
     }

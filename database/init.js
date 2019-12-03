@@ -1,6 +1,6 @@
-const mysql = require('mysql')
-const config = require('./config')
-const pool = mysql.createPool(config)
+const mysql = require('mysql');
+const config = require('./config');
+const pool = mysql.createPool(config);
 const query = (sql, values) => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {

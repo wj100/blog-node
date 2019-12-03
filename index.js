@@ -6,7 +6,7 @@ const bodyParser = require('body-parser') // 解析POST请求数据
 const cookieParser = require('cookie-parser') // 第三方cookie操作模块，方便操作客户端中的cookie值
 const path = require('path')
 const blog = require('./api/blog.js')
-const test2 = require('./api/test2.js')
+const test = require('./api/test.js')
 
 
 var allowCors = function(req, res, next) {
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, '../dist'))) // 部署上线时读取静态文件
 app.use('/api/blog', blog);
-app.use('/api/test2', test2);
+app.use('/api/test', test);
 
 app.listen(3000)
 console.log('success listen at port:3000......')
